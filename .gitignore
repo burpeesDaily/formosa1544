@@ -135,3 +135,7 @@ ENV/
 *.out
 *.app
 .vscode/settings.json
+
+
+# Data
+*.data
