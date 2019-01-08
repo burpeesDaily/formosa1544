@@ -40,7 +40,7 @@ import seaborn as sns
 
 sns.set() # set the default seaborn theme, scaling, and color palette.
 
-from perceptron_classifier import PerceptronClassifier
+import perceptron_classifier
 
 # Download Iris Data Set from 
 # http://archive.ics.uci.edu/ml/datasets/Iris
@@ -71,7 +71,9 @@ VIRGINICA_LABEL = IRIS_DATA.iloc[100:150, 4].values
 LABELS = np.append(VERSICOLOR_LABEL, VIRGINICA_LABEL)
 SAMPLES = np.append(VERSICOLOR, VIRGINICA, axis=0)
 
-perceptron_classifier = PerceptronClassifier(2, ("Iris-versicolor", "Iris-virginica"))
+perceptron_classifier = perceptron_classifier.PerceptronClassifier(
+    number_of_attributes=2, class_labels=('Iris-versicolor', 'Iris-virginica'))
+
 perceptron_classifier.train(SAMPLES, LABELS, 100)
 plt.plot(perceptron_classifier.misclassify_record, color="purple")
 
