@@ -24,7 +24,7 @@ class PerceptronClassifier:
     -------
     train(samples: [[]], labels: [], max_iterator: int = 10)
         Train the perceptron learning algorithm with samples.
-    classify(new_data: [[]]):
+    classify(new_data: [[]]) -> []
         Classify the input data.
 
     See Also
@@ -54,11 +54,11 @@ class PerceptronClassifier:
     >>> perceptron_classifier.train(samples, labels)
     >>> new_data = [[6.3, 3.3, 4.7, 1.6], [4.6, 3.4, 1.4, 0.3]]
     Predict the class for the new_data
-    >>> perceptron_classifier.classify(tests)
+    >>> perceptron_classifier.classify(new_data)
     [1, -1]
     """
     def __init__(self, number_of_attributes: int, class_labels: ()):
-        """Constructor of PerceptronClassifier.
+        """Initializer of PerceptronClassifier.
 
         Parameters
         ----------
@@ -83,11 +83,13 @@ class PerceptronClassifier:
         self._reversed_label_map = {class_labels[0]: 1, class_labels[1]: -1}
 
     def _linear_combination(self, sample: []) -> float:
-        """linear combination of sample and weights
+        """linear combination of sample and weights.
         """
         return np.inner(sample, self.weights[1:])
 
-    def train(self, samples: [[]], labels: [],
+    def train(self,
+              samples: [[]],
+              labels: [],
               max_iterator: int = 10) -> NoReturn:
         """Train the model with samples.
 
@@ -96,7 +98,7 @@ class PerceptronClassifier:
         samples: two dimensions list
             The training data set.
         labels: list of labels
-            The class labels of the training data
+            The class labels of the training data.
         max_iterator: int, optional
             The max iterator to stop the training process in case the
             training data is not converged. The default is 10.

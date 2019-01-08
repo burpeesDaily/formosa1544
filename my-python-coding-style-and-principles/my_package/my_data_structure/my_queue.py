@@ -15,7 +15,7 @@ class _QueueNode(_common.MyNode):
     """
 
     def __init__(self, data: Any):
-        """Constructor for `_QueueNode`.
+        """Initializer for `_QueueNode`.
 
         Parameters
         ----------
