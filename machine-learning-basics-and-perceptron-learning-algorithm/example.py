@@ -6,11 +6,11 @@ import pandas as pd
 import perceptron_classifier # Perceptron classifier
 
 # Download Iris Data Set from http://archive.ics.uci.edu/ml/datasets/Iris
-URL = 'http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
-urllib.request.urlretrieve(URL, 'iris.data')
+URL = "http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
+urllib.request.urlretrieve(URL, "iris.data")
 # Use pandas.read_csv module to load iris data set
 # http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html
-IRIS_DATA = pd.read_csv('iris.data', header=None)
+IRIS_DATA = pd.read_csv("iris.data", header=None)
 
 # Prepare the training data and test data
 # The original Iris Data Set has 150 samples and 50 samples for each
@@ -69,7 +69,7 @@ VERIFY = np.append(VERIFY, VIRGINICA_VERIFY)
 
 # Define a setosa-versicolor Perceptron() with 2 attributes
 perceptron_setosa_versicolor = perceptron_classifier.PerceptronClassifier(
-    number_of_attributes=2, class_labels=('Iris-setosa', 'Iris-versicolor'))
+    number_of_attributes=2, class_labels=("Iris-setosa", "Iris-versicolor"))
 
 # Train the model
 perceptron_setosa_versicolor.train(
@@ -77,7 +77,7 @@ perceptron_setosa_versicolor.train(
 
 # Define a setosa-virginica Perceptron() with 2 attributes
 perceptron_setosa_virginica = perceptron_classifier.PerceptronClassifier(
-    number_of_attributes=2, class_labels=('Iris-setosa', 'Iris-virginica'))
+    number_of_attributes=2, class_labels=("Iris-setosa", "Iris-virginica"))
 
 # Train the model
 perceptron_setosa_virginica.train(
@@ -85,7 +85,7 @@ perceptron_setosa_virginica.train(
 
 # Define a versicolor-virginica Perceptron() with 2 attributes
 perceptron_versicolor_virginica = perceptron_classifier.PerceptronClassifier(
-    number_of_attributes=2, class_labels=('Iris-versicolor', 'Iris-virginica'))
+    number_of_attributes=2, class_labels=("Iris-versicolor", "Iris-virginica"))
 
 # Train the model
 perceptron_versicolor_virginica.train(VERSICOLOR_VIRGINICA_TRAINING_DATA,
@@ -104,36 +104,36 @@ for item in zip(predict_target_1, predict_target_2, predict_target_3):
     overall_predict_result.append(
         sorted(temp_result, reverse=True, key=lambda tup: tup[1])[0][0])
     # The result should look like:
-    # [('Iris-setosa', 2), ('Iris-versicolor', 1)]
-    # [('Iris-setosa', 2), ('Iris-versicolor', 1)]
-    # [('Iris-setosa', 2), ('Iris-versicolor', 1)]
-    # [('Iris-setosa', 2), ('Iris-versicolor', 1)]
-    # [('Iris-setosa', 2), ('Iris-versicolor', 1)]
-    # [('Iris-setosa', 2), ('Iris-versicolor', 1)]
-    # [('Iris-setosa', 2), ('Iris-versicolor', 1)]
-    # [('Iris-setosa', 2), ('Iris-versicolor', 1)]
-    # [('Iris-setosa', 2), ('Iris-versicolor', 1)]
-    # [('Iris-setosa', 2), ('Iris-versicolor', 1)]
-    # [('Iris-versicolor', 2), ('Iris-virginica', 1)]
-    # [('Iris-versicolor', 2), ('Iris-virginica', 1)]
-    # [('Iris-versicolor', 2), ('Iris-virginica', 1)]
-    # [('Iris-versicolor', 2), ('Iris-virginica', 1)]
-    # [('Iris-versicolor', 2), ('Iris-virginica', 1)]
-    # [('Iris-versicolor', 2), ('Iris-virginica', 1)]
-    # [('Iris-versicolor', 2), ('Iris-virginica', 1)]
-    # [('Iris-versicolor', 2), ('Iris-virginica', 1)]
-    # [('Iris-versicolor', 2), ('Iris-virginica', 1)]
-    # [('Iris-versicolor', 2), ('Iris-virginica', 1)]
-    # [('Iris-virginica', 2), ('Iris-versicolor', 1)]
-    # [('Iris-virginica', 2), ('Iris-versicolor', 1)]
-    # [('Iris-virginica', 2), ('Iris-versicolor', 1)]
-    # [('Iris-virginica', 2), ('Iris-versicolor', 1)]
-    # [('Iris-virginica', 2), ('Iris-versicolor', 1)]
-    # [('Iris-virginica', 2), ('Iris-versicolor', 1)]
-    # [('Iris-virginica', 2), ('Iris-versicolor', 1)]
-    # [('Iris-virginica', 2), ('Iris-versicolor', 1)]
-    # [('Iris-virginica', 2), ('Iris-versicolor', 1)]
-    # [('Iris-virginica', 2), ('Iris-versicolor', 1)]
+    # [("Iris-setosa", 2), ("Iris-versicolor", 1)]
+    # [("Iris-setosa", 2), ("Iris-versicolor", 1)]
+    # [("Iris-setosa", 2), ("Iris-versicolor", 1)]
+    # [("Iris-setosa", 2), ("Iris-versicolor", 1)]
+    # [("Iris-setosa", 2), ("Iris-versicolor", 1)]
+    # [("Iris-setosa", 2), ("Iris-versicolor", 1)]
+    # [("Iris-setosa", 2), ("Iris-versicolor", 1)]
+    # [("Iris-setosa", 2), ("Iris-versicolor", 1)]
+    # [("Iris-setosa", 2), ("Iris-versicolor", 1)]
+    # [("Iris-setosa", 2), ("Iris-versicolor", 1)]
+    # [("Iris-versicolor", 2), ("Iris-virginica", 1)]
+    # [("Iris-versicolor", 2), ("Iris-virginica", 1)]
+    # [("Iris-versicolor", 2), ("Iris-virginica", 1)]
+    # [("Iris-versicolor", 2), ("Iris-virginica", 1)]
+    # [("Iris-versicolor", 2), ("Iris-virginica", 1)]
+    # [("Iris-versicolor", 2), ("Iris-virginica", 1)]
+    # [("Iris-versicolor", 2), ("Iris-virginica", 1)]
+    # [("Iris-versicolor", 2), ("Iris-virginica", 1)]
+    # [("Iris-versicolor", 2), ("Iris-virginica", 1)]
+    # [("Iris-versicolor", 2), ("Iris-virginica", 1)]
+    # [("Iris-virginica", 2), ("Iris-versicolor", 1)]
+    # [("Iris-virginica", 2), ("Iris-versicolor", 1)]
+    # [("Iris-virginica", 2), ("Iris-versicolor", 1)]
+    # [("Iris-virginica", 2), ("Iris-versicolor", 1)]
+    # [("Iris-virginica", 2), ("Iris-versicolor", 1)]
+    # [("Iris-virginica", 2), ("Iris-versicolor", 1)]
+    # [("Iris-virginica", 2), ("Iris-versicolor", 1)]
+    # [("Iris-virginica", 2), ("Iris-versicolor", 1)]
+    # [("Iris-virginica", 2), ("Iris-versicolor", 1)]
+    # [("Iris-virginica", 2), ("Iris-versicolor", 1)]
 
 # Verify the results
 misclassified = 0
