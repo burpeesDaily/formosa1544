@@ -18,8 +18,6 @@ Packages
 --------
 my_data_structure
     A package contains some data structure.
-my_ml
-    A package contains some machine learning features.
 
 Modules
 -------
@@ -29,7 +27,7 @@ prime_generator
 See Also
 --------
 The detail of my Python coding style and documenting style can be
-found at link FIXME: fix the link
+found at https://shunsvineyard.info/2019/01/05/my-python-coding-style-and-principles/
 
 Notes
 -----
