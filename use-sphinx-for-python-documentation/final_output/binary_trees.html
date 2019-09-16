@@ -1,0 +1,763 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>binary_trees package &#8212; Sample Project 0.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="binary_trees" href="modules.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="binary_trees"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Sample Project 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" accesskey="U">binary_trees</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">binary_trees package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-binary_trees.binary_search_tree">binary_trees.binary_search_tree module</a></li>
+<li><a class="reference internal" href="#module-binary_trees.binary_tree">binary_trees.binary_tree module</a></li>
+<li><a class="reference internal" href="#module-binary_trees.traversal">binary_trees.traversal module</a><ul>
+<li><a class="reference internal" href="#routines">Routines</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-binary_trees">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="modules.html"
+                        title="previous chapter">binary_trees</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/binary_trees.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="binary-trees-package">
+<h1>binary_trees package<a class="headerlink" href="#binary-trees-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-binary_trees.binary_search_tree">
+<span id="binary-trees-binary-search-tree-module"></span><h2>binary_trees.binary_search_tree module<a class="headerlink" href="#module-binary_trees.binary_search_tree" title="Permalink to this headline">¶</a></h2>
+<p>A Binary Search Tree (BST) module.</p>
+<p>A BST is a binary tree with the following properties:</p>
+<ul class="simple">
+<li><p>The left subtree of a node contains only nodes whose keys are less
+than or equal to the node’s key</p></li>
+<li><p>The right subtree of a node contains only nodes whose keys are
+greater than the node’s key</p></li>
+</ul>
+<p>Besides, BST should provide, at least, these Basic Operations:
+- Search: search an element in a tree
+- Insert: insert an element in a tree
+- Delete: delete an element in a tree
+- Traversal: traverses a tree</p>
+<p>A BST keeps the keys in sorted order so that the operations can use
+the principle of binary search. In general, the time complexity of
+a BST is as the table.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 34%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Operations</p></th>
+<th class="head"><p>Average</p></th>
+<th class="head"><p>Worst</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Space</p></td>
+<td><p>O(n)</p></td>
+<td><p>O(n)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Search</p></td>
+<td><p>O(log n)</p></td>
+<td><p>O(n)</p></td>
+</tr>
+<tr class="row-even"><td><p>Insert</p></td>
+<td><p>O(log n)</p></td>
+<td><p>O(n)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Delete</p></td>
+<td><p>O(log n)</p></td>
+<td><p>O(n)</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="binary_trees.binary_search_tree.BinarySearchTree">
+<em class="property">class </em><code class="sig-prename descclassname">binary_trees.binary_search_tree.</code><code class="sig-name descname">BinarySearchTree</code><span class="sig-paren">(</span><em class="sig-param">key: KeyType = None</em>, <em class="sig-param">data: Any = None</em><span class="sig-paren">)</span><a class="headerlink" href="#binary_trees.binary_search_tree.BinarySearchTree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#binary_trees.binary_tree.BinaryTree" title="binary_trees.binary_tree.BinaryTree"><code class="xref py py-class docutils literal notranslate"><span class="pre">binary_trees.binary_tree.BinaryTree</span></code></a></p>
+<p>Binary Search Tree (BST) class.</p>
+<dl class="attribute">
+<dt id="binary_trees.binary_search_tree.BinarySearchTree.root">
+<code class="sig-name descname">root</code><a class="headerlink" href="#binary_trees.binary_search_tree.BinarySearchTree.root" title="Permalink to this definition">¶</a></dt>
+<dd><p>The root o   the binary search tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>binary_tree.Node</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="binary_trees.binary_search_tree.BinarySearchTree.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param">key: binary_tree.KeyType</em><span class="sig-paren">)</span><a class="headerlink" href="#binary_trees.binary_search_tree.BinarySearchTree.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the data from a tree based on the key.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binary_trees.binary_search_tree.BinarySearchTree.get_height">
+<code class="sig-name descname">get_height</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#binary_trees.binary_search_tree.BinarySearchTree.get_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the height of the tree.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binary_trees.binary_search_tree.BinarySearchTree.get_max">
+<code class="sig-name descname">get_max</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#binary_trees.binary_search_tree.BinarySearchTree.get_max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the maximum key from the tree.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binary_trees.binary_search_tree.BinarySearchTree.get_min">
+<code class="sig-name descname">get_min</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#binary_trees.binary_search_tree.BinarySearchTree.get_min" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the minimum key from the tree.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binary_trees.binary_search_tree.BinarySearchTree.insert">
+<code class="sig-name descname">insert</code><span class="sig-paren">(</span><em class="sig-param">key: binary_tree.KeyType</em>, <em class="sig-param">data: Any</em><span class="sig-paren">)</span><a class="headerlink" href="#binary_trees.binary_search_tree.BinarySearchTree.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert a key and data pair into a tree.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binary_trees.binary_search_tree.BinarySearchTree.is_balance">
+<code class="sig-name descname">is_balance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#binary_trees.binary_search_tree.BinarySearchTree.is_balance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the tree is balance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binary_trees.binary_search_tree.BinarySearchTree.search">
+<code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param">key: binary_tree.KeyType</em><span class="sig-paren">)</span><a class="headerlink" href="#binary_trees.binary_search_tree.BinarySearchTree.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Look for the key in a tree.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binary_trees.binary_search_tree.BinarySearchTree.size">
+<code class="sig-name descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#binary_trees.binary_search_tree.BinarySearchTree.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the total number of nodes of the tree.</p>
+</dd></dl>
+
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">binary_trees</span> <span class="k">import</span> <span class="n">binary_search_tree</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span> <span class="o">=</span> <span class="n">binary_search_tree</span><span class="o">.</span><span class="n">BinarySearchTree</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">23</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;23&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;4&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;30&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;11&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;7&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">34</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;34&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;20&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;24&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;22&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;15&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="go">11</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">get_min</span><span class="p">()</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">get_max</span><span class="p">()</span>
+<span class="go">34</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">is_balance</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
+<span class="go">24</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt>
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param">key: KeyType</em><span class="sig-paren">)</span></dt>
+<dd><p>Delete the data based on the given key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> (<cite>KeyType</cite>) – The key associated with the data.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>KeyError</strong> – If the key does not exist, <cite>KeyError</cite> will be thrown.</p></li>
+<li><p><strong>RuntimeError</strong> – Should never happen, but it happens, <cite>RuntimeError</cite> will be thrown.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="sig-name descname">get_height</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int</dt>
+<dd><p>Return the height of the tree.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="sig-name descname">get_max</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Any</dt>
+<dd><p>Return the maximum key from the tree.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="sig-name descname">get_min</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Any</dt>
+<dd><p>Return the minimum key from the tree.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="sig-name descname">insert</code><span class="sig-paren">(</span><em class="sig-param">key: KeyType</em>, <em class="sig-param">data: Any</em><span class="sig-paren">)</span></dt>
+<dd><p>Insert data and its key into the binary tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<cite>binary_tree.KeyType</cite>) – A unique key associated with the data.</p></li>
+<li><p><strong>data</strong> (<cite>Any</cite>) – The data to be inserted into the tree.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the input data has existed in the tree, <cite>ValueError</cite>
+    will be thrown.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="sig-name descname">is_balance</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool</dt>
+<dd><p>Check if the tree is balance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True is the tree is balance; False otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><cite>bool</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param">key: KeyType</em><span class="sig-paren">)</span> &#x2192; Any</dt>
+<dd><p>Search data based on the given key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> (<cite>binary_tree.KeyType</cite>) – The key associated with the data.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>data</strong> – The data based on the given key; None if the key not found.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><cite>Any</cite></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>KeyError</strong> – If the key does not exist, <cite>KeyError</cite> will be thrown.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="binary_trees.binary_search_tree.is_valid_binary_search_tree">
+<code class="sig-prename descclassname">binary_trees.binary_search_tree.</code><code class="sig-name descname">is_valid_binary_search_tree</code><span class="sig-paren">(</span><em class="sig-param">tree: TreeType</em><span class="sig-paren">)</span><a class="headerlink" href="#binary_trees.binary_search_tree.is_valid_binary_search_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if a binary tree is a valid BST.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tree</strong> (<em>binary_tree.TreeType</em>) – A type of binary tree.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True is the tree is a BST; False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">binary_trees</span> <span class="k">import</span> <span class="n">binary_search_tree</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span> <span class="o">=</span> <span class="n">binary_search_tree</span><span class="o">.</span><span class="n">BinarySearchTree</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">23</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;23&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;4&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;30&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;11&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;7&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">34</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;34&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;20&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;24&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;22&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;15&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">binary_search_tree</span><span class="o">.</span><span class="n">is_valid_binary_search_tree</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-binary_trees.binary_tree">
+<span id="binary-trees-binary-tree-module"></span><h2>binary_trees.binary_tree module<a class="headerlink" href="#module-binary_trees.binary_tree" title="Permalink to this headline">¶</a></h2>
+<p>A base class for binary trees.</p>
+<dl class="class">
+<dt id="binary_trees.binary_tree.BinaryTree">
+<em class="property">class </em><code class="sig-prename descclassname">binary_trees.binary_tree.</code><code class="sig-name descname">BinaryTree</code><a class="headerlink" href="#binary_trees.binary_tree.BinaryTree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>An abstract base class for any types of binary trees.</p>
+<p>This base class defines the basic properties and methods that all types of
+binary tress should provide.</p>
+<dl class="method">
+<dt id="binary_trees.binary_tree.BinaryTree.search">
+<code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param">key: `KeyType`</em><span class="sig-paren">)</span><a class="headerlink" href="#binary_trees.binary_tree.BinaryTree.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search binary tree for a specific key.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binary_trees.binary_tree.BinaryTree.insert">
+<code class="sig-name descname">insert</code><span class="sig-paren">(</span><em class="sig-param">key: `KeyType`</em><span class="sig-paren">)</span><a class="headerlink" href="#binary_trees.binary_tree.BinaryTree.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert data by its key into a binary tree.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binary_trees.binary_tree.BinaryTree.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param">key: `KeyType`</em><span class="sig-paren">)</span><a class="headerlink" href="#binary_trees.binary_tree.BinaryTree.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete data by its key from a binary treeW.</p>
+</dd></dl>
+
+<p class="rubric">Notes</p>
+<p>One reason to use abstract base class for all types of binary trees
+is to make sure the type of binary trees is compatable. Therefore, binary
+tree traversal can be performed on any type of binary trees.</p>
+<dl class="method">
+<dt>
+<em class="property">abstract </em><code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param">key: KeyType</em><span class="sig-paren">)</span> &#x2192; NoReturn</dt>
+<dd><p>Delete the data based on the given key.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<em class="property">abstract </em><code class="sig-name descname">insert</code><span class="sig-paren">(</span><em class="sig-param">key: KeyType</em>, <em class="sig-param">data: Any</em><span class="sig-paren">)</span> &#x2192; NoReturn</dt>
+<dd><p>Insert data and its key into the binary tree.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<em class="property">abstract </em><code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param">key: KeyType</em><span class="sig-paren">)</span> &#x2192; Any</dt>
+<dd><p>Search the data based the given key.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="binary_trees.binary_tree.BinaryTree.size">
+<em class="property">property </em><code class="sig-name descname">size</code><a class="headerlink" href="#binary_trees.binary_tree.BinaryTree.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Size of a tree, i.e., the number of nodes.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="binary_trees.binary_tree.KeyType">
+<code class="sig-prename descclassname">binary_trees.binary_tree.</code><code class="sig-name descname">KeyType</code><em class="property"> = ~KeyType</em><a class="headerlink" href="#binary_trees.binary_tree.KeyType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type of a tree node key. The key must be comparable.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="binary_trees.binary_tree.Node">
+<em class="property">class </em><code class="sig-prename descclassname">binary_trees.binary_tree.</code><code class="sig-name descname">Node</code><span class="sig-paren">(</span><em class="sig-param">key: KeyType</em>, <em class="sig-param">data: Any</em>, <em class="sig-param">left: Optional[Node] = None</em>, <em class="sig-param">right: Optional[Node] = None</em><span class="sig-paren">)</span><a class="headerlink" href="#binary_trees.binary_tree.Node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Generic</span></code></p>
+<p>Basic tree node class.</p>
+<dl class="attribute">
+<dt id="binary_trees.binary_tree.Node.key">
+<code class="sig-name descname">key</code><a class="headerlink" href="#binary_trees.binary_tree.Node.key" title="Permalink to this definition">¶</a></dt>
+<dd><p>A key can be anything that is comparable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>KeyType</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binary_trees.binary_tree.Node.data">
+<code class="sig-name descname">data</code><a class="headerlink" href="#binary_trees.binary_tree.Node.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Any type of data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>Any</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binary_trees.binary_tree.Node.left">
+<code class="sig-name descname">left</code><a class="headerlink" href="#binary_trees.binary_tree.Node.left" title="Permalink to this definition">¶</a></dt>
+<dd><p>The left child of the node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>Node</cite>, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="binary_trees.binary_tree.Node.right">
+<code class="sig-name descname">right</code><a class="headerlink" href="#binary_trees.binary_tree.Node.right" title="Permalink to this definition">¶</a></dt>
+<dd><p>The right child of the node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><cite>Node</cite>, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">left</code><em class="property"> = None</em></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">right</code><em class="property"> = None</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="data">
+<dt id="binary_trees.binary_tree.TreeType">
+<code class="sig-prename descclassname">binary_trees.binary_tree.</code><code class="sig-name descname">TreeType</code><em class="property"> = ~TreeType</em><a class="headerlink" href="#binary_trees.binary_tree.TreeType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type of a binary tree class which must be derived from <cite>BaseTree</cite></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-binary_trees.traversal">
+<span id="binary-trees-traversal-module"></span><h2>binary_trees.traversal module<a class="headerlink" href="#module-binary_trees.traversal" title="Permalink to this headline">¶</a></h2>
+<p>Binary tree traversal.</p>
+<div class="section" id="routines">
+<h3>Routines<a class="headerlink" href="#routines" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>inorder_traverse(</dt><dd><p>tree: binary_tree.TreeType) -&gt; List[Tuple[binary_tree.KeyType, Any]]
+Perform in-order traversal.</p>
+</dd>
+<dt>preorder_traverse(</dt><dd><p>tree: binary_tree.TreeType) -&gt; List[Tuple[binary_tree.KeyType, Any]]
+Perform pre-order traversal.</p>
+</dd>
+<dt>postorder_traverse(</dt><dd><p>tree: binary_tree.TreeType) -&gt; List[Tuple[binary_tree.KeyType, Any]]
+Perform post-order traversal.</p>
+</dd>
+<dt>levelorder_traverse(</dt><dd><p>tree: binary_tree.TreeType) -&gt; List[Tuple[binary_tree.KeyType, Any]]
+Perform level order traversal.</p>
+</dd>
+</dl>
+<dl class="data">
+<dt id="binary_trees.traversal.NodeType">
+<code class="sig-prename descclassname">binary_trees.traversal.</code><code class="sig-name descname">NodeType</code><em class="property"> = typing.Union[binary_trees.binary_tree.Node, NoneType]</em><a class="headerlink" href="#binary_trees.traversal.NodeType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for the <cite>binary_tree.Node</cite></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="binary_trees.traversal.OutputType">
+<code class="sig-prename descclassname">binary_trees.traversal.</code><code class="sig-name descname">OutputType</code><em class="property"> = typing.List[typing.Tuple[~KeyType, typing.Any]]</em><a class="headerlink" href="#binary_trees.traversal.OutputType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output type of tree traversal.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="binary_trees.traversal.inorder_traverse">
+<code class="sig-prename descclassname">binary_trees.traversal.</code><code class="sig-name descname">inorder_traverse</code><span class="sig-paren">(</span><em class="sig-param">tree: TreeType</em><span class="sig-paren">)</span> &#x2192; List[Tuple[KeyType, Any]]<a class="headerlink" href="#binary_trees.traversal.inorder_traverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform In-Order traversal.</p>
+<p>In-order traversal traverses a tree by the order:
+left subtree, current node, right subtree (LDR)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tree</strong> (<cite>binary_tree.TreeType</cite>) – A type of binary tree.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>inorder</strong> – Return the result of the in-order traversal.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><cite>OutputType</cite></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">binary_trees</span> <span class="k">import</span> <span class="n">binary_search_tree</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">binary_trees</span> <span class="k">import</span> <span class="n">traversal</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span> <span class="o">=</span> <span class="n">binary_search_tree</span><span class="o">.</span><span class="n">BinarySearchTree</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">23</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;23&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;4&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;30&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;11&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;7&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">34</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;34&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;20&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;24&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;22&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;15&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">traversal</span><span class="o">.</span><span class="n">inorder_traverse</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
+<span class="go">[(1, &#39;1&#39;), (4, &#39;4&#39;), (7, &#39;7&#39;), (11, &#39;11&#39;), (15, &#39;15&#39;), (20, &#39;20&#39;),</span>
+<span class="go"> (22, &#39;22&#39;), (23, &#39;23&#39;), (24, &#39;24&#39;), (30, &#39;30&#39;), (34, &#39;34&#39;)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">traversal</span><span class="o">.</span><span class="n">inorder_traverse</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">[(1, &#39;1&#39;), (4, &#39;4&#39;), (7, &#39;7&#39;), (11, &#39;11&#39;), (15, &#39;15&#39;), (20, &#39;20&#39;),</span>
+<span class="go"> (22, &#39;22&#39;), (23, &#39;23&#39;), (24, &#39;24&#39;), (30, &#39;30&#39;), (34, &#39;34&#39;)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="binary_trees.traversal.levelorder_traverse">
+<code class="sig-prename descclassname">binary_trees.traversal.</code><code class="sig-name descname">levelorder_traverse</code><span class="sig-paren">(</span><em class="sig-param">tree: TreeType</em><span class="sig-paren">)</span> &#x2192; List[Tuple[KeyType, Any]]<a class="headerlink" href="#binary_trees.traversal.levelorder_traverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform Level-Order traversal.</p>
+<p>Level-order traversal traverses a tree:
+level by level, from left to right, starting from the root node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tree</strong> (<cite>binary_tree.TreeType</cite>) – A type of binary tree.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>levelorder</strong> – Return the result of the level-order traversal.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><cite>OutputType</cite></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">binary_trees</span> <span class="k">import</span> <span class="n">binary_search_tree</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">binary_trees</span> <span class="k">import</span> <span class="n">traversal</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span> <span class="o">=</span> <span class="n">binary_search_tree</span><span class="o">.</span><span class="n">BinarySearchTree</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">23</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;23&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;4&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;30&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;11&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;7&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">34</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;34&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;20&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;24&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;22&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;15&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">traversal</span><span class="o">.</span><span class="n">levelorder_traverse</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
+<span class="go">[(23, &#39;23&#39;), (4, &#39;4&#39;), (30, &#39;30&#39;), (1, &#39;1&#39;), (11, &#39;11&#39;), (24, &#39;24&#39;),</span>
+<span class="go"> (34, &#39;34&#39;), (7, &#39;7&#39;), (20, &#39;20&#39;), (15, &#39;15&#39;), (22, &#39;22&#39;)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="binary_trees.traversal.outorder_traverse">
+<code class="sig-prename descclassname">binary_trees.traversal.</code><code class="sig-name descname">outorder_traverse</code><span class="sig-paren">(</span><em class="sig-param">tree: TreeType</em><span class="sig-paren">)</span> &#x2192; List[Tuple[KeyType, Any]]<a class="headerlink" href="#binary_trees.traversal.outorder_traverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform Out-Order traversal.</p>
+<p>Out-order traversal traverses a tree by the order:
+right subtree, current node, left subtree (RNL)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tree</strong> (<cite>binary_tree.TreeType</cite>) – A type of binary tree.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>outorder</strong> – Return the result of the out-order traversal.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><cite>OutputType</cite></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">binary_trees</span> <span class="k">import</span> <span class="n">binary_search_tree</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">binary_trees</span> <span class="k">import</span> <span class="n">traversal</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span> <span class="o">=</span> <span class="n">binary_search_tree</span><span class="o">.</span><span class="n">BinarySearchTree</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">23</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;23&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;4&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;30&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;11&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;7&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">34</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;34&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;20&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;24&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;22&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;15&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">traversal</span><span class="o">.</span><span class="n">outorder_traverse</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
+<span class="go">[(34, &#39;34&#39;), (30, &#39;30&#39;), (24, &#39;24&#39;), (23, &#39;23&#39;), (22, &#39;22&#39;), (20, &#39;20&#39;),</span>
+<span class="go"> (15, &#39;15&#39;), (11, &#39;11&#39;), (7, &#39;7&#39;), (4, &#39;4&#39;), (1, &#39;1&#39;)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">traversal</span><span class="o">.</span><span class="n">outorder_traverse</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">[(34, &#39;34&#39;), (30, &#39;30&#39;), (24, &#39;24&#39;), (23, &#39;23&#39;), (22, &#39;22&#39;), (20, &#39;20&#39;),</span>
+<span class="go"> (15, &#39;15&#39;), (11, &#39;11&#39;), (7, &#39;7&#39;), (4, &#39;4&#39;), (1, &#39;1&#39;)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="binary_trees.traversal.postorder_traverse">
+<code class="sig-prename descclassname">binary_trees.traversal.</code><code class="sig-name descname">postorder_traverse</code><span class="sig-paren">(</span><em class="sig-param">tree: TreeType</em><span class="sig-paren">)</span> &#x2192; List[Tuple[KeyType, Any]]<a class="headerlink" href="#binary_trees.traversal.postorder_traverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform Post-Order traversal.</p>
+<p>Post-order traversal traverses a tree by the order:
+left subtree, right subtree, current node (LRD)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tree</strong> (<cite>binary_tree.TreeType</cite>) – A type of binary tree.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>postorder</strong> – Return the result of the post-order traversal.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><cite>OutputType</cite></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">binary_trees</span> <span class="k">import</span> <span class="n">binary_search_tree</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">binary_trees</span> <span class="k">import</span> <span class="n">traversal</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span> <span class="o">=</span> <span class="n">binary_search_tree</span><span class="o">.</span><span class="n">BinarySearchTree</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">23</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;23&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;4&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;30&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;11&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;7&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">34</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;34&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;20&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;24&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;22&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;15&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">traversal</span><span class="o">.</span><span class="n">postorder_traverse</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
+<span class="go">[(1, &#39;1&#39;), (7, &#39;7&#39;), (15, &#39;15&#39;), (22, &#39;22&#39;), (20, &#39;20&#39;), (11, &#39;11&#39;),</span>
+<span class="go"> (4, &#39;4&#39;), (24, &#39;24&#39;), (34, &#39;34&#39;), (30, &#39;30&#39;), (23, &#39;23&#39;)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">traversal</span><span class="o">.</span><span class="n">postorder_traverse</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">[(1, &#39;1&#39;), (7, &#39;7&#39;), (15, &#39;15&#39;), (22, &#39;22&#39;), (20, &#39;20&#39;), (11, &#39;11&#39;),</span>
+<span class="go"> (4, &#39;4&#39;), (24, &#39;24&#39;), (34, &#39;34&#39;), (30, &#39;30&#39;), (23, &#39;23&#39;)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="binary_trees.traversal.preorder_traverse">
+<code class="sig-prename descclassname">binary_trees.traversal.</code><code class="sig-name descname">preorder_traverse</code><span class="sig-paren">(</span><em class="sig-param">tree: TreeType</em><span class="sig-paren">)</span> &#x2192; List[Tuple[KeyType, Any]]<a class="headerlink" href="#binary_trees.traversal.preorder_traverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform Pre-Order traversal.</p>
+<p>Pre-order traversal traverses a tree by the order:
+current node, left subtree, right subtree (DLR)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tree</strong> (<cite>binary_tree.TreeType</cite>) – A type of binary tree.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>preorder</strong> – Return the result of the pre-order traversal.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><cite>OutputType</cite></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">binary_trees</span> <span class="k">import</span> <span class="n">binary_search_tree</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">binary_trees</span> <span class="k">import</span> <span class="n">traversal</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span> <span class="o">=</span> <span class="n">binary_search_tree</span><span class="o">.</span><span class="n">BinarySearchTree</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">23</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;23&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;4&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;30&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;11&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;7&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">34</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;34&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;20&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;24&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;22&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;15&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">traversal</span><span class="o">.</span><span class="n">preorder_traverse</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
+<span class="go">[(23, &#39;23&#39;), (4, &#39;4&#39;), (1, &#39;1&#39;), (11, &#39;11&#39;), (7, &#39;7&#39;), (20, &#39;20&#39;),</span>
+<span class="go"> (15, &#39;15&#39;), (22, &#39;22&#39;), (30, &#39;30&#39;), (24, &#39;24&#39;), (34, &#39;34&#39;)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">traversal</span><span class="o">.</span><span class="n">preorder_traverse</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">[(23, &#39;23&#39;), (4, &#39;4&#39;), (1, &#39;1&#39;), (11, &#39;11&#39;), (7, &#39;7&#39;), (20, &#39;20&#39;),</span>
+<span class="go"> (15, &#39;15&#39;), (22, &#39;22&#39;), (30, &#39;30&#39;), (24, &#39;24&#39;), (34, &#39;34&#39;)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-binary_trees">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-binary_trees" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="binary_trees"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Sample Project 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >binary_trees</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Author.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+    </div>
+  </body>
+</html>
