@@ -3,7 +3,7 @@ Shun's Vineyard
 
 Sample code from my website `Shun's Vineyard`_.
 
-.. `Shun's Vineyard`: https://shunsvineyard.info
+.. _`Shun's Vineyard`: https://shunsvineyard.info
 
 Table of Contents
 -----------------
