@@ -136,6 +136,11 @@ ENV/
 *.app
 .vscode/settings.json
 
-
 # Data
 *.data
+
+# Visual Studio Code
+.vscode
+
+# Pytest
+.pytest_cache
