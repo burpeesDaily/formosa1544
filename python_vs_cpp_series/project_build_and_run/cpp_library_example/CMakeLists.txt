@@ -5,4 +5,4 @@ set(SOURCES ${PROJECT_SOURCE_DIR}/src/MyLib.cpp)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
-add_library(mylib SHARED ${SOURCES})
+add_library(mylib STATIC ${SOURCES})
