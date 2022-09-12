@@ -1,9 +1,8 @@
-import mylib
+import mylib2
 
 
-number_1 = 10
-number_2 = 20
-
-result = mylib.add(a=number_1, b=number_2)
-
+number_1 = 23
+number_2 = 29
+result = mylib2.add(a=number_1, b=number_2)
+print("Running from the main2...")
 print(f"{number_1} + {number_2} = {result}")
