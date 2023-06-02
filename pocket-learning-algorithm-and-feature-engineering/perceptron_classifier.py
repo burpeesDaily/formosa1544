@@ -30,7 +30,7 @@ class PerceptronClassifier:
     See Also
     --------
     See details at:
-    https://shunsvineyard.info/2017/10/22/machine-learning-basics-and-perceptron-learning-algorithm/
+    https://www.formosa1544.com/2017/10/22/machine-learning-basics-and-perceptron-learning-algorithm/
 
     Examples
     --------
