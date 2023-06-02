@@ -62,7 +62,7 @@ class PocketClassifier:
     See Also
     --------
     See details at:
-    https://shunsvineyard.info/2018/02/11/machine-learning-basics-pocket-learning-algorithm-and-basic-feature-engineering/
+    https://www.formosa1544.com/2018/02/11/machine-learning-basics-pocket-learning-algorithm-and-basic-feature-engineering/
 
     Examples
     --------
