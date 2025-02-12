@@ -1,25 +1,23 @@
-# Copyright © 2017, 2019 by Shun Huang. All rights reserved.
-# Licensed under MIT License.
-# See LICENSE in the project root for license information.
-
 import collections
-from typing import Any # For type hints
-from urllib import request
 
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
 
-from sklearn import preprocessing
+from typing import Any
+from urllib import request
+
+from sklearn import impute
 from sklearn import model_selection
+from sklearn import preprocessing
 
-import pocket_classifier 
-import perceptron_classifier
+import pocket_classifier
 
-sns.set() # set the default seaborn theme, scaling, and color palette.
 
-def imputer_by_most_frequent(missing_values: Any, data: []) -> []:
+sns.set_theme()  # set the default seaborn theme, scaling, and color palette.
+
+
+def imputer_by_most_frequent(missing_values: Any, data: list) -> list:
     """Input missing value by frequency, i.e., the value appeared
     most often.
 
@@ -28,8 +26,7 @@ def imputer_by_most_frequent(missing_values: Any, data: []) -> []:
     missing_values: Any
         The missing value can be np.nan, "?", or whatever character
         which indicates missing value.
-
-    data: []
+    data: list
         The list of the data.
 
     Returns
@@ -45,7 +42,8 @@ def imputer_by_most_frequent(missing_values: Any, data: []) -> []:
         complete_list.append(item)
     return complete_list
 
-def one_hot_encoder(data=[]) -> []:
+
+def one_hot_encoder(data: list) -> list:
     """Transfer categorical data to numerical data based on one hot
     encoding approach.
 
@@ -66,6 +64,7 @@ def one_hot_encoder(data=[]) -> []:
     encoder = preprocessing.OneHotEncoder()
     encoder.fit(two_d_array)
     return encoder.transform(two_d_array).toarray()
+
 
 if __name__ == "__main__":
     # Download Japanese Credit Data Set from
@@ -88,42 +87,35 @@ if __name__ == "__main__":
     # A7: v, h, bb, j, n, z, dd, ff, o. (missing) frequency
     # A8: continuous.
     # A9: t, f.
-    #A10: t, f.
-    #A11: continuous.
-    #A12: t, f.
-    #A13: g, p, s.
-    #A14: continuous. (missing) mean
-    #A15: continuous.
-    #A16: +,- (class label)
+    # A10: t, f.
+    # A11: continuous.
+    # A12: t, f.
+    # A13: g, p, s.
+    # A14: continuous. (missing) mean
+    # A15: continuous.
+    # A16: +,- (class label)
 
-    A1_no_missing = imputer_by_most_frequent(np.nan, 
-                                             crx_data.iloc[:, 0].values)
+    A1_no_missing = imputer_by_most_frequent(np.nan, crx_data.iloc[:, 0].values)
 
     A1_encoded = one_hot_encoder(A1_no_missing)
 
-    imputer = preprocessing.Imputer(missing_values=np.nan,
-                                    strategy="mean",
-                                    axis=0)
+    imputer = impute.SimpleImputer(missing_values=np.nan, strategy="mean")
 
     A2_two_d = np.array([[item] for item in crx_data.iloc[:, 1].values])
     A2_no_missing = imputer.fit_transform(A2_two_d)
 
     A3 = crx_data.iloc[:, 2].values
 
-    A4_no_missing = imputer_by_most_frequent(np.nan,
-                                             crx_data.iloc[:, 3].values)
+    A4_no_missing = imputer_by_most_frequent(np.nan, crx_data.iloc[:, 3].values)
     A4_encoded = one_hot_encoder(A4_no_missing)
 
-    A5_no_missing = imputer_by_most_frequent(np.nan,
-                                             crx_data.iloc[:, 4].values)
+    A5_no_missing = imputer_by_most_frequent(np.nan, crx_data.iloc[:, 4].values)
     A5_encoded = one_hot_encoder(A5_no_missing)
 
-    A6_no_missing = imputer_by_most_frequent(np.nan,
-                                             crx_data.iloc[:, 5].values)
+    A6_no_missing = imputer_by_most_frequent(np.nan, crx_data.iloc[:, 5].values)
     A6_encoded = one_hot_encoder(A6_no_missing)
 
-    A7_no_missing = imputer_by_most_frequent(np.nan,
-                                             crx_data.iloc[:, 6].values)
+    A7_no_missing = imputer_by_most_frequent(np.nan, crx_data.iloc[:, 6].values)
     A7_encoded = one_hot_encoder(A7_no_missing)
 
     A8 = crx_data.iloc[:, 7].values
@@ -173,19 +165,19 @@ if __name__ == "__main__":
     # Use scikit-learn"s train_test_split function to separate
     # the Iris Data Set to a training subset (75% of the data)
     # and a test subst (25% of the data).
-    DATA_TRAIN, DATA_TEST, LABELS_TRAIN, LABELS_TEST = \
-        model_selection.train_test_split(data_minmax, label,
-                                         test_size=0.25,
-                                         random_state=1000)
+    DATA_TRAIN, DATA_TEST, LABELS_TRAIN, LABELS_TEST = model_selection.train_test_split(
+        data_minmax, label, test_size=0.25, random_state=1000
+    )
 
-    pocket_classifier = pocket_classifier.PocketClassifier(features, ("+", "-"))
-    pocket_classifier.train(DATA_TRAIN, LABELS_TRAIN, 100)
+    classifier = pocket_classifier.PocketClassifier(features, ("+", "-"))
+    classifier.train(DATA_TRAIN, LABELS_TRAIN, 100)
 
-    result = pocket_classifier.classify(DATA_TEST)
+    result = classifier.classify(DATA_TEST)
 
     misclassify = 0
     for predict, answer in zip(result, LABELS_TEST):
         if predict != answer:
             misclassify += 1
-    print("Accuracy rate: %2.2f"
-          % (100 * (len(result) - misclassify) / len(result)) + "%")
+    print(
+        "Accuracy rate: %2.2f" % (100 * (len(result) - misclassify) / len(result)) + "%"
+    )
