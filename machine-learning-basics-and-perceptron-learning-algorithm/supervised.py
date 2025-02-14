@@ -5,11 +5,11 @@
 """An example of supervised learning uses the Iris data set.
 https://archive.ics.uci.edu/ml/datasets/Iris
 Attribute Information:
-0. sepal length in cm 
-1. sepal width in cm 
-2. petal length in cm 
-3. petal width in cm 
-4. class: 
+0. sepal length in cm
+1. sepal width in cm
+2. petal length in cm
+3. petal width in cm
+4. class:
 -- Iris Setosa 
 -- Iris Versicolour 
 -- Iris Virginica
@@ -18,12 +18,12 @@ Attribute Information:
 import urllib.request
 
 # matplotlib is a python 2D plotting library which produces publication
-# quality. Figures in a variety of hardcopy formats and interactive
+# quality. Figures in a variety of formats and interactive
 # environments across platforms.
 # http://matplotlib.org/2.0.0/index.html
 import matplotlib.pyplot as plt
 
-# pandas is an open source library providing high-performance, 
+# pandas is an open source library providing high-performance,
 # easy-to-use data structures and data analysis tools.
 # http://pandas.pydata.org/
 import pandas as pd
@@ -34,9 +34,9 @@ import pandas as pd
 # http://seaborn.pydata.org/index.html
 import seaborn as sns
 
-sns.set() # set the default seaborn theme, scaling, and color palette.
+sns.set_theme()  # set the default seaborn theme, scaling, and color palette.
 
-# Download Iris Data Set from 
+# Download Iris Data Set from
 # http://archive.ics.uci.edu/ml/datasets/Iris
 URL = "http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
 urllib.request.urlretrieve(URL, "iris.data")

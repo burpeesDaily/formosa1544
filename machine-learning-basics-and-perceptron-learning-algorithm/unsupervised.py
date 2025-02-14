@@ -5,25 +5,25 @@
 """An example of unsurprised learning uses the Iris data set.
 https://archive.ics.uci.edu/ml/datasets/Iris
 Attribute Information:
-1. sepal length in cm 
-2. sepal width in cm 
-3. petal length in cm 
-4. petal width in cm 
-5. class: 
--- Iris Setosa 
--- Iris Versicolour 
+1. sepal length in cm
+2. sepal width in cm
+3. petal length in cm
+4. petal width in cm
+5. class:
+-- Iris Setosa
+-- Iris Versicolour
 -- Iris Virginica
 """
 
 import urllib.request
 
 # matplotlib is a python 2D plotting library which produces publication
-# quality. Figures in a variety of hardcopy formats and interactive
+# quality. Figures in a variety of formats and interactive
 # environments across platforms.
 # http://matplotlib.org/2.0.0/index.html
 import matplotlib.pyplot as plt
 
-# pandas is an open source library providing high-performance, 
+# pandas is an open source library providing high-performance,
 # easy-to-use data structures and data analysis tools.
 # http://pandas.pydata.org/
 import pandas as pd
@@ -34,13 +34,13 @@ import pandas as pd
 # http://seaborn.pydata.org/index.html
 import seaborn as sns
 
-sns.set() # set the default seaborn theme, scaling, and color palette.
+sns.set_theme()  # set the default seaborn theme, scaling, and color palette.
 
 # Download Iris Data Set from http://archive.ics.uci.edu/ml/datasets/Iris
 URL = "http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
 urllib.request.urlretrieve(URL, "iris.data")
 # use pandas read_csv function to read iris.data into a python array.
-# Note: the iris.data is headerless, so header is None.
+# Note: the iris.data does not have headers, so header is None.
 iris_data = pd.read_csv("iris.data", header=None)
 
 unlabeled_data = iris_data.iloc[:, [0, 2]].values
