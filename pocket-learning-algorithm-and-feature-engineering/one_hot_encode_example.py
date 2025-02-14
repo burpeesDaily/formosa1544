@@ -4,14 +4,13 @@
 
 import urllib.request
 
-import numpy as np
 import pandas as pd
 
 from sklearn import preprocessing
 
-def one_hot_encoder(data=[]) -> []:
-    """Transfer categorical data to numerical data based on one hot
-    encoding approach.
+
+def one_hot_encoder(data: list) -> list:
+    """Transfer categorical data to numerical data based on one hot encoding approach.
 
     Parameters
     ----------
@@ -36,6 +35,7 @@ def one_hot_encoder(data=[]) -> []:
     encoder = preprocessing.OneHotEncoder()
     encoder.fit(two_d_array)
     return encoder.transform(two_d_array).toarray()
+
 
 if __name__ == "__main__":
     # Download the Japanese Credit Data Set from

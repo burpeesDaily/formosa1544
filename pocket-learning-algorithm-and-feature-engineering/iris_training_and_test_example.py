@@ -5,13 +5,13 @@
 """An example of supervised learning uses the Iris data set.
 https://archive.ics.uci.edu/ml/datasets/Iris
 Attribute Information:
-0. sepal length in cm 
-1. sepal width in cm 
-2. petal length in cm 
-3. petal width in cm 
-4. class: 
--- Iris Setosa 
--- Iris Versicolour 
+0. sepal length in cm
+1. sepal width in cm
+2. petal length in cm
+3. petal width in cm
+4. class:
+-- Iris Setosa
+-- Iris Versicolour
 -- Iris Virginica
 """
 
@@ -43,13 +43,13 @@ DATA = IRIS_DATA.iloc[50:150, [0, 2]].values
 # Use scikit-learn's train_test_split function to separate the
 # Iris Data Set to a training subset (75% of the data) and
 # a test subst (25% of the data)
-DATA_TRAIN, DATA_TEST, LABELS_TRAIN, LABELS_TEST = \
-    model_selection.train_test_split(DATA, LABELS,
-                                     test_size=0.25,
-                                     random_state=1000)
+DATA_TRAIN, DATA_TEST, LABELS_TRAIN, LABELS_TEST = model_selection.train_test_split(
+    DATA, LABELS, test_size=0.25, random_state=1000
+)
 
 perceptron_classifier = perceptron_classifier.PerceptronClassifier(
-    number_of_attributes=2, class_labels=('Iris-versicolor', 'Iris-virginica'))
+    number_of_attributes=2, class_labels=("Iris-versicolor", "Iris-virginica")
+)
 
 perceptron_classifier.train(DATA_TRAIN, LABELS_TRAIN, 100)
 result = perceptron_classifier.classify(DATA_TEST)
@@ -59,5 +59,4 @@ for predict, answer in zip(result, LABELS_TEST):
     if predict != answer:
         misclassify += 1
 
-print("Accuracy rate: %2.2f"
-      % (100 * (len(result) - misclassify) / len(result)) + "%")
+print("Accuracy rate: %2.2f" % (100 * (len(result) - misclassify) / len(result)) + "%")

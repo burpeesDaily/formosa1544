@@ -1,30 +1,37 @@
-# Copyright © 2017, 2019 by Shun Huang. All rights reserved.
+# Copyright © 2017, 2019, 2025 by Shun Huang. All rights reserved.
 # Licensed under MIT License.
 # See LICENSE in the project root for license information.
 
-"""A Perceptron Classifier. 
-"""
-from typing import Any, NoReturn # For type hints
+"""A Perceptron Classifier."""
 
 import numpy as np
 
+from typing import Any, Tuple
+
+
 class PerceptronClassifier:
-    """Preceptron Binary Classifier uses Perceptron Learning Algorithm
-    to classify two classes data.
+    """Perceptron Binary Classifier uses Perceptron Learning Algorithm.
+
+    Parameters
+    ----------
+    number_of_attributes: int
+        The number of attributes of the data set.
+    class_labels: tuple of the class labels
+        The class labels can be anything as long as it has only two
+        types of labels.
 
     Attributes
     ----------
     weights: list of float
         The list of weights corresponding to the input attributes.
-
     misclassify_record: list of int
         The number of misclassification for each training.
 
     Methods
     -------
-    train(samples: [[]], labels: [], max_iterator: int = 10)
+    train(samples: list[list], labels: list, max_iterator: int = 10)
         Train the perceptron learning algorithm with samples.
-    classify(new_data: [[]]) -> []
+    classify(new_data: list[list]) -> list[int]
         Classify the input data.
 
     See Also
@@ -57,40 +64,26 @@ class PerceptronClassifier:
     >>> perceptron_classifier.classify(new_data)
     [1, -1]
     """
-    def __init__(self, number_of_attributes: int, class_labels: ()):
-        """Initializer of PerceptronClassifier.
 
-        Parameters
-        ----------
-        number_of_attributes: int
-            The number of attributes of the data set.
-        class_labels: tuple of the class labels
-            The class labels can be anything as long as it has only two
-            types of labels.
-
-        """
+    def __init__(self, number_of_attributes: int, class_labels: Tuple):
         # Initialize the weights to all zero.
         # The size is the number of attributes plus the bias,
         # i.e., x_0 * w_0.
         self.weights = np.zeros(number_of_attributes + 1)
 
         # Record of the number of misclassify for each training sample
-        self.misclassify_record = []
+        self.misclassify_record: list[int] = []
 
         # Build the label map to map the original labels to numerical
         # labels. For example, ["a", "b"] -> {0: "a", 1: "b"}
         self._label_map = {1: class_labels[0], -1: class_labels[1]}
         self._reversed_label_map = {class_labels[0]: 1, class_labels[1]: -1}
 
-    def _linear_combination(self, sample: []) -> float:
-        """linear combination of sample and weights.
-        """
+    def _linear_combination(self, sample: list) -> Any:
+        """Linear combination of sample and weights."""
         return np.inner(sample, self.weights[1:])
 
-    def train(self,
-              samples: [[]],
-              labels: [],
-              max_iterator: int = 10) -> NoReturn:
+    def train(self, samples: list[list], labels: list, max_iterator: int = 10) -> None:
         """Train the model with samples.
 
         Parameters
@@ -104,9 +97,7 @@ class PerceptronClassifier:
             training data is not converged. The default is 10.
         """
         # Transfer the labels to numerical labels
-        transferred_labels = [
-            self._reversed_label_map[index] for index in labels
-        ]
+        transferred_labels = [self._reversed_label_map[index] for index in labels]
 
         for _ in range(max_iterator):
             misclassifies = 0
@@ -125,7 +116,7 @@ class PerceptronClassifier:
                 break
             self.misclassify_record.append(misclassifies)
 
-    def classify(self, new_data: [[]]) -> []:
+    def classify(self, new_data: list[list]) -> list[int]:
         """Classify the sample based on the trained weights.
 
         Parameters
@@ -135,10 +126,11 @@ class PerceptronClassifier:
 
         Returns
         -------
-        List of int
+        list[int]
             The list of predicted class labels.
         """
-        predicted_result = np.where((self._linear_combination(new_data)
-                                    + self.weights[0]) >= 0.0, 1, -1)
+        predicted_result = np.where(
+            (self._linear_combination(new_data) + self.weights[0]) >= 0.0, 1, -1
+        )
 
         return [self._label_map[item] for item in predicted_result]

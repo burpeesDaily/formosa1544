@@ -5,16 +5,15 @@
 import collections
 import urllib.request
 
-from typing import Any, NoReturn # For type hints
-
 import numpy as np
 import pandas as pd
 
-from sklearn import preprocessing
+from typing import Any
+from sklearn import impute
 
-def imputer_by_most_frequent(missing_values: Any, data: []) -> []:
-    """Input missing value by frequency, i.e., the value appeared
-    most often.
+
+def imputer_by_most_frequent(missing_values: Any, data: list) -> list:
+    """Input missing value by frequency, i.e., the value appeared most often.
 
     Parameters
     ----------
@@ -22,7 +21,7 @@ def imputer_by_most_frequent(missing_values: Any, data: []) -> []:
         The missing value can be np.nan, "?", or whatever character
         which indicates missing value.
 
-    data: []
+    data: list
         The list of the data.
 
     Returns
@@ -39,6 +38,7 @@ def imputer_by_most_frequent(missing_values: Any, data: []) -> []:
         complete_list.append(item)
     return complete_list
 
+
 if __name__ == "__main__":
     # Download Japanese Credit Data Set from http://archive.ics.uci.edu/ml/datasets/Japanese+Credit+Screening
     URL = "http://archive.ics.uci.edu/ml/machine-learning-databases/credit-screening/crx.data"
@@ -49,7 +49,7 @@ if __name__ == "__main__":
     # A1:   b, a
     #
     # Use the input by mean number approach to input the missing
-    # values in A2: 
+    # values in A2:
     # A2:   continuous
 
     crx_data = pd.read_csv("crx.data", header=None)
@@ -66,9 +66,7 @@ if __name__ == "__main__":
 
     # Use scikit-learn Imputer to input missing values by mean number.
     # http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.Imputer.html
-    imputer = preprocessing.Imputer(missing_values=np.nan,
-                                    strategy="mean",
-                                    axis=0)
+    imputer = impute.SimpleImputer(missing_values=np.nan, strategy="mean")
     # Convert to two-dimension list, since Imputer only accepts
     # two dimensions list.
     A2_two_d = np.array([[item] for item in crx_data.iloc[:, 1].values])
